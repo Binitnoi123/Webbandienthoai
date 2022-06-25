@@ -1,0 +1,29 @@
+﻿@model IEnumerable<WebBanDienThoaiDoAn.Models.Product> 
+<div class="nn-block">
+    <div class="nn-megamenu-sidebar-title"><i class="glyphicon glyphicon-tags"></i><h2>Best sellers</h2></div>
+    <div class="nn-block-product">
+        <ul>
+            @foreach(var c in Model)
+            {
+
+            <li>
+                <div class="nn-block-product-sidebar">
+                    <div class="nn-block-product-sidebar-img col-md-5">
+                        <a href="/Product/Detail/@c.Id">
+                            <img class="img-responsive" src="/Content/img/products/@c.Image" />
+                        </a>
+                    </div>
+                    <div class="nn-block-product-sidebar-details col-md-7">
+                        <h3 class="nn-block-product-sidebar-name">
+                            <a href="/Product/Detail/@c.Id" >@c.Name</a>
+                        </h3>
+                        <div class="nn-block-product-sidebar-price ">
+                            <span class="">@Html.FormatValue(@c.UnitPrice, "{0:#,###}")</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            }
+        </ul>
+    </div>
+</div><!--end block best seller-->
